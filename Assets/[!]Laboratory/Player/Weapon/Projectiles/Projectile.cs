@@ -14,7 +14,7 @@ public class Projectile : MonoBehaviour
 	[SerializeField] protected GameObject[] _trailParticles;
 	[SerializeField] protected Vector3 _impactNormal; //Used to rotate impactparticle.
 
-
+	[SerializeField] protected float _id;
 	[SerializeField] protected float _damage;
 	[SerializeField] protected float _shootingRate;
 	[SerializeField] private float _deathTime;
@@ -51,6 +51,10 @@ public class Projectile : MonoBehaviour
 			return _damage;
 		}
 	}
+
+	// на старте начинается отчет времи до смерти снаряда StartCoroutine(DeathBullet());
+	// запускается сам прочектайл снаряда
+	// появляются частицы при вылите (если они есть)
 	private void Start()
 	{
 		_parent = transform;
@@ -64,11 +68,14 @@ public class Projectile : MonoBehaviour
 			Destroy(_muzzleParticle, .2f); // Lifetime of muzzle effect.
 		}
 	}
+
+	// цель - если она нужна
 	public void SetTarget(GameObject target)
 	{
 		_targets = target;
 	}
 	
+	// гибель снаряда
 	protected void Death(float deathTime)
 	{
 		StopCoroutine(DeathBullet());

@@ -2,28 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameObjectsPanel : MonoBehaviour
+public class GameObjectsContainer : MonoBehaviour
 
 {
-    public static GameObjectsPanel instance = null; // Ёкземпл€р объекта
+    public static GameObjectsContainer instance = null; // Ёкземпл€р объекта
 
     
     public GameObject Me;    
 
     [SerializeField] private List<GameObject> _allObjects;
-    public List<GameObject> AllObjects
-    {
-        private set
-        {
-            _allObjects = value;
-        }
+	public List<GameObject> AllObjects
+	{
+		private set
+		{
+			_allObjects = value;
+		}
 
-        get
-        {
-            return _allObjects;
-        }
-    }
+		get
+		{
+			return _allObjects;
+		}
+	}
 
+	[SerializeField] private AbillityExecuter _abillityExecuter;
+    public AbillityExecuter AbillityExecuter => _abillityExecuter;
     // ћетод, выполн€емый при старте игры
     void Awake()
     {

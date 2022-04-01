@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bd8f63887701c04bbb8c3cd9b249494, type: 3}
+  m_Name: BlueRocket
+  m_EditorClassIdentifier: 
+  _placeLogic: {fileID: 11400000, guid: 22077f1b20927ca49b9bd9a38f106dfb, type: 2}
+  _actions:
+  - {fileID: 11400000, guid: 7dacd5fe0f56a354180660314a717724, type: 2}
